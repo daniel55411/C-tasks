@@ -1,3 +1,0 @@
-/root/CLionProjects/statistics/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/root/CLionProjects/statistics/cmake-build-debug/CMakeFiles/edit_cache.dir
-/root/CLionProjects/statistics/cmake-build-debug/CMakeFiles/statistics.dir
