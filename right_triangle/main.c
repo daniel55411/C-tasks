@@ -1,16 +1,13 @@
 #include <stdio.h>
+#include <math.h>
+
+#define EPS 0.00001
 
 int cmp(float value_1, float value_2) {
-    int int_value_1 = *(int*)&value_1;
-    int int_value_2 = *(int*)&value_2;
-
-    if (int_value_1 == int_value_2) {
+    if (fabs(value_1 - value_2) < EPS) {
         return 0;
-    } else if (int_value_1 > int_value_2) {
-        return 1;
-    } else if (int_value_1 < int_value_2) {
-        return -1;
     }
+    return value_1 > value_2 ? 1 : -1;
 }
 
 int pythagorean_theorem(float catheter_1,
@@ -32,7 +29,9 @@ int main(void) {
 
     scanf("%f %f %f", &side_1, &side_2, &side_3);
 
-    if (!is_triangle(side_1, side_2, side_3)) {
+    if (!is_triangle(side_1, side_2, side_3)
+            || !is_triangle(side_2, side_3, side_1)
+            || !is_triangle(side_3, side_1, side_2)) {
         return 1;
     }
 
